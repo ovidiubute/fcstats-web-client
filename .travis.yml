@@ -1,16 +1,17 @@
 language: node_js
 node_js:
-- '5'
-- '4'
+  - '5'
+  - '4'
 env:
   global:
   - secure: "i4roScn9rWXT7Jb9BXPbNJkljkOZA8harOpefGlqBv+m5REHRo+1t17PrOT1flcch1rinmQ8f89tAtozCsJm6/bHQJHrFkoWUHMcI+ccPYNzgfkOjedp7s/oijsaF80+AzBMcCoro7ZqFJxv5whYSjwtsHXbYQejB0WibOLIo4TMnwsLMWutLyR4lYeZQl1RpZhQOtqRzLzqHaHudJc5O9lvuVVkaXNoCc07Bt2pqQqBhNaq95QYyZGAmj9r3LYlQDUX9EaO0A2I+UZ3btx3nU3q7hW5q/g9h5m1AvG2h4gNBKiMYM696JoFsQsNO8ZDolWjQuEpuUGyiqSlc2x2s7nvQ14OwquJCwAYiRkoVmiYVOuyGvLWlHC3OB4isUxEU1pikv8hu0YC0uiltBDDZ9DYS/wY6zL6N2lYwUf5HHZabGahiHU/i74WD+H8m1H0PwJx0yccLL1Zwy+XWJuAy2Wg9yyxZ0RtfYDoa7UAEkELCc3xH7S3ZU4I2UdwpOb74hGY4LAHJUSY6yolnLD4XdkcLnePlQhwRicEonJ5BuK72h++0TuhG3YHqGRm0ZxMojraEBENjhZDiqUhDhP/FMOG27/k1xTMIkzCPKX/XbJUL7ArVOSHvCp6zcJXf7Zp0mgYLspMmkY3DFVEg0F5b9uV3BRKoVHSU7EwlzrriQM="
  - secure: "lLZsnk0UmC2L2kZ+SOzVjHVNd1ol6LaI9r/mBx7P+jHAVMzPnWiqE79YGcfH0DJlqRm6ZkRk4wX00M6kNtZiFtOKFuA9WPpO1/tgg00I1uqQ1VHvroSw2/aiBD3hD9F4m4WHLQnAgM5oR0Qn8teqZtJDoRsTlr6XIKoMmZ8hI4fFmibioPpnqA84DhsDer3SuUdpcZkg22DekI5U5bGkP7m9Dpq6YsCK0xBcfgRboGSCXyIEQbYkkxgsbVjTYkmjnZCq3WfogVYdNiDZvUpoSqTvDrQMmQOv/iE+Yr/LpEWwxTVf/lyTG3pYDNkiLa4UR53ObRQSpprHWmIKn/A6y1m2+pTZK0xHRKMdtSMKiRphJpGkFOcfnk4jvHWy2JT+kg/d6rG6EBXTKArRh4ZeFJGkJZEN0wPgo2xyW3BgtjZNEVhX+VCZ5FXAVX+8OtxQgZltII/CqjqOQ0nKm/tHkqsIDgLF3KQzYJeQin656qRLYUHWVGppJvU+kTIOlFuxIbbJg792c2hSlzcmPrrQk0wzq66L8MOs5SAjkN/gXNKU/Jc4IZXInEvOOTe4qyyWb0FZpwqgCxr6kK2gS5XJvPnjUpU0wgjNO9Kh0DavFrCHKG3Oahpl7yUSEoSs4V+UpiKZJ9ALPuZqLagGNA1byL9pG6pxOmwYkmnoOkb22h4="
  - secure: "MYWkGct4i/ls4N10NXEMpDk+GQJMr5NCskVGDnk/RuokI2Nmu4HBTZk8g3hyFt0YezC9WHesaHEP1HxITD/mTWCZQRZ2Sw3REls0vSfLzFMmbOXofuqfC5pHcx1/dy+eUr8CgbqHwbHyRFxJO8Z39gKrFdnXVfC9Zi2ZUIZbNeRbUWDQXoe7plPcwkhHvkqfZ/BrRyRvGzXmZ2H54kYMqCKmsYu0C5OPwOzxCQdzkNRYqb9Lxk/OF+PjjuqlUZNY+JtvHUTl+Z0o4o9ScY82TZD5q7AK3bG8XdsTtNH55jjeXLIL5aDPjI+1p77cBF7q6le6kx1x4Uqbqf5aZZ9tyFf+D7bhXO50cCRj5tzG6GPUxaNc5zmWoV/eYsOW/EqCRBbhs6bQWrSV1W1aRnvZq3PZU+Z+NoZsbpkpRFP/23nqwMBrRqo3bm20EavoYmc5eJDzxoTQ74TZtE8Ph8Dl4PHJk4atRhCvgf91aKF6gWCi9wP61rjgl4QeinD/2YRSDR6U3+a1Wx3DMKji/9SpaaU2Bf81av/bunteg0KphabONtPekBsV953FKcDMRulPaKaDl5kltNm2i0qUQLxPKjHXaoPUk6OmPVZkWRspE3xldUVgkgIFNqj9TiidjS6Rcb9Ur2SYnjO7xYQot7XAZwhZiLZ/g6EyVoSOAgWG0zo="
 before_script:
-- npm install -g webpack
-script: npm run build
+  - npm install -g webpack
+script: 
+  - npm run build
 before_install:
-- openssl aes-256-cbc -K $encrypted_bb4c41061261_key -iv $encrypted_bb4c41061261_iv -in deploy-key.enc -out deploy-key -d
+  - openssl aes-256-cbc -K $encrypted_bb4c41061261_key -iv $encrypted_bb4c41061261_iv -in deploy-key.enc -out deploy-key -d
 after_success:
-- scp build/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+  - scp build/* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
