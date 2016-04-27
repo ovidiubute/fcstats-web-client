@@ -4,7 +4,7 @@ class FixtureLoader {
   getByLeagueAndYear(leagueName, startYear) {
     return makeRequest({
       method: 'GET',
-      url: `http://localhost:7216/api/matches/${leagueName}/${startYear}`
+      url: `http://159.203.152.181:7216/api/matches/${leagueName}/${startYear}`
     })
   }
 }

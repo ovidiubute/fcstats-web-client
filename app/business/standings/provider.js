@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-import league_country from 'json!../../../../staticdata/league_country.json'
+import league_country from 'json!fcstats-staticdata/league_country.json'
 import FixtureLoader from '../fixtures/loader'
 
 class StandingsProvider {
@@ -36,7 +36,7 @@ class StandingsProvider {
   }
 
   getFinalStandings(leagueName, year) {
-    const rulesJson = require('json!../../../../staticdata/' + league_country[leagueName] + '/rules.json');
+    const rulesJson = require('json!fcstats-staticdata/' + league_country[leagueName] + '/rules.json');
     const winPoints = rulesJson.rules.since.year <= year ? rulesJson.rules.since.win : rulesJson.rules.before.win;
 
     return new Promise((resolve, reject) => {

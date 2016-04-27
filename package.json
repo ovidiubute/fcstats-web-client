@@ -19,7 +19,8 @@
     "react-dom": "^15.0.1",
     "react-loading": "0.0.9",
     "react-modal": "^1.1.2",
-    "react-router": "^2.2.4"
+    "react-router": "^2.2.4",
+    "fcstats-staticdata": "ovidiubute/fcstats-staticdata"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
