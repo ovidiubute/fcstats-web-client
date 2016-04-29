@@ -8,6 +8,7 @@ const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build')
 };
+const PROD = process.env.NODE_ENV === 'production';
 
 process.env.BABEL_ENV = TARGET;
 
@@ -83,6 +84,9 @@ if (TARGET === 'start' || !TARGET) {
         new webpack.HotModuleReplacementPlugin(),
         new NpmInstallPlugin({
           save: true // --save
+        }),
+        new webpack.DefinePlugin({
+          'ENV': require(path.join(__dirname, 'conf', 'dev.js'))
         })
       ]
   });
@@ -102,6 +106,9 @@ if (TARGET === 'build') {
           unused: true,
           drop_console: true
         }
+      }),
+      new webpack.DefinePlugin({
+        'ENV': require(path.join(__dirname, 'conf', 'production.js'))
       })
     ]
   });

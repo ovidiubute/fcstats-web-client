@@ -2,10 +2,10 @@
   "name": "fcstats-client",
   "version": "1.0.0",
   "description": "Football stats client",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
-    "test": "_mocha --compilers js:babel-core/register -R spec ",
-    "build": "webpack",
+    "test": "_mocha --compilers js:babel-core/register -R spec",
+    "build": "NODE_ENV=production webpack",
     "start": "webpack-dev-server"
   },
   "author": "Ovidiu Bute <ovidiu.bute@gmail.com> (http://ovidiubute.com)",

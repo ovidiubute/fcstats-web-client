@@ -4,7 +4,8 @@ class FixtureLoader {
   getByLeagueAndYear(leagueName, startYear) {
     return makeRequest({
       method: 'GET',
-      url: `https://footballstats.oviprojects.xyz/api/matches/${leagueName}/${startYear}`
+      url: ENV.API_HTTPS ? 'https' : 'http' + '://' + ENV.API_ENDPOINT + ':' +
+      ENV.API_PORT + `/api/matches/${leagueName}/${startYear}`
     })
   }
 }
