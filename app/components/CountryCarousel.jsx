@@ -29,7 +29,7 @@ class CountryCarousel extends React.Component {
       imageElements.push(
         <a key={"select-league-" + leagueName}
           onClick={this.onSelect.bind(this, leagueName)}
-          href={"#/" + leagueName + "/1993"}
+          href={"#/" + leagueName}
           style={{margin: 'auto'}}
         >
           <img style={imgStyle} alt={countryName} src="/static/transparent.gif"/>

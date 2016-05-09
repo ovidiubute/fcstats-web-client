@@ -116,9 +116,4 @@ class LeagueTable extends React.Component {
     }
 }
 
-LeagueTable.defaultProps = {
-  leagueName: 'SP1',
-  seasonYear: 1993
-}
-
 export default LeagueTable

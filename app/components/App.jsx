@@ -30,14 +30,15 @@ class App extends React.Component {
             <div className="panel panel-default">
               <div className="panel-header">
                 <Nav
-                  activeLeagueName={this.props.params.leagueName}
+                  activeLeagueName={this.props.leagueName}
+                  activeSeasonYear={this.props.seasonYear}
                   onClickFlag={this.onClickFlag.bind(this)}
                 />
               </div>
               <div className="panel-body">
                 <LeagueTable
-                  seasonYear={this.props.params.seasonYear}
-                  leagueName={this.props.params.leagueName}
+                  seasonYear={this.props.seasonYear}
+                  leagueName={this.props.leagueName}
                 />
               </div>
             </div>
@@ -51,12 +52,5 @@ class App extends React.Component {
     );
   }
 }
-
-App.defaultProps = {
-  params: {
-    leagueName: 'SP1',
-    seasonYear: 1993
-  }
-};
 
 export default App;

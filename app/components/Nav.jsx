@@ -16,10 +16,16 @@ class Nav extends React.Component {
                       />
                     </div>
                     <div className="navbar-collapse collapse" aria-expanded="false" style={{height: "1px"}}>
-                      <LeagueTitle leagueName={this.props.activeLeagueName} />
+                      <LeagueTitle
+                        leagueName={this.props.activeLeagueName}
+                        seasonYear={this.props.activeSeasonYear}
+                      />
 
                       <div className="navbar-right">
-                        <SeasonSelector />
+                        <SeasonSelector
+                          selectedYear={this.props.activeSeasonYear}
+                          leagueName={this.props.activeLeagueName}
+                        />
                       </div>
                     </div>
                 </div>
@@ -30,6 +36,7 @@ class Nav extends React.Component {
 
 Nav.propTypes = {
   activeLeagueName: React.PropTypes.string.isRequired,
+  activeSeasonYear: React.PropTypes.number.isRequired,
   onClickFlag: React.PropTypes.func.isRequired
 }
 
