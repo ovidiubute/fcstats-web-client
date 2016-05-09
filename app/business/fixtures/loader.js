@@ -1,11 +1,14 @@
 import makeRequest from '../../utils/promise-xhr'
 
+import { apiUrl } from '../../utils/api'
+
 class FixtureLoader {
   getByLeagueAndYear(leagueName, startYear) {
+    let url = apiUrl;
+    url += `/api/matches/${leagueName}/${startYear}`;
     return makeRequest({
       method: 'GET',
-      url: ENV.API_HTTPS ? 'https' : 'http' + '://' + ENV.API_ENDPOINT + ':' +
-      ENV.API_PORT + `/api/matches/${leagueName}/${startYear}`
+      url: url
     })
   }
 }
