@@ -70,7 +70,7 @@ class SeasonSelector extends React.Component {
             <MenuItem
               key={"season-" + index}
               active={isActive}
-              href={"#/" + this.props.leagueName + "/" + s.yearStart}
+              href={"/" + this.props.leagueName + "/" + s.yearStart}
             >
               {s.yearStart} - {s.yearEnd}
             </MenuItem>

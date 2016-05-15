@@ -1,7 +1,7 @@
 // Library imports
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 
 // App specific imports
 import App from './components/App.jsx'
@@ -17,7 +17,7 @@ class AppWrapper extends React.Component {
 
 // main()
 render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={AppWrapper} />
     <Route path="/:leagueName/:seasonYear" component={AppWrapper}/>
     <Route path="/:leagueName" component={AppWrapper}/>
