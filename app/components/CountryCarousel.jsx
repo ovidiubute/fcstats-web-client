@@ -1,6 +1,7 @@
 import React from 'react'
-import { getCountryFlagByName } from './countryselector/country_flag_finder';
-import { leagueNamesToCountries } from './countryselector/static/leagues_to_countries';
+import { getCountryFlagByName } from './countryselector/country_flag_finder'
+import { leagueNamesToCountries } from './countryselector/static/leagues_to_countries'
+import { slugLeague } from '../utils/library'
 
 class CountryCarousel extends React.Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class CountryCarousel extends React.Component {
       imageElements.push(
         <a key={"select-league-" + leagueName}
           onClick={this.onSelect.bind(this, leagueName)}
-          href={"#/" + leagueName}
+          href={"#/" + slugLeague(leagueName)}
           style={{margin: 'auto'}}
         >
           <img style={imgStyle} alt={countryName} src="/static/transparent.gif"/>

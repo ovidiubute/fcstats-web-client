@@ -5,6 +5,7 @@ import { DropdownButton, MenuItem } from 'react-bootstrap'
 
 import SeasonsLoader from '../business/seasons/loader'
 import TransferStateEnum from '../business/standings/transferstateenum'
+import { slugLeague } from '../utils/library'
 
 class SeasonSelector extends React.Component {
   constructor(props) {
@@ -70,7 +71,7 @@ class SeasonSelector extends React.Component {
             <MenuItem
               key={"season-" + index}
               active={isActive}
-              href={"#/" + this.props.leagueName + "/" + s.yearStart}
+              href={"#/" + slugLeague(this.props.leagueName) + "/" + s.yearStart}
             >
               {s.yearStart} - {s.yearEnd}
             </MenuItem>
