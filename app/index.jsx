@@ -9,9 +9,25 @@ import { unslugLeague } from './utils/library'
 
 class AppWrapper extends React.Component {
   render() {
+    let leagueName = 'SP1';
+    if (typeof this.props.params.leagueSlug !== 'undefined') {
+      let tryLeague = unslugLeague(this.props.params.leagueSlug);
+      if (typeof tryLeague !== 'undefined') {
+        leagueName = tryLeague;
+      }
+    }
+
+    let seasonYear = 1998;
+    if (typeof this.props.params.seasonYear !== 'undefined') {
+      let tryYear = Number.parseInt(this.props.params.seasonYear);
+      if (!Number.isNaN(tryYear)) {
+        seasonYear = tryYear;
+      }
+    }
+
     return (<App
-      leagueName={typeof this.props.params.leagueSlug !== 'undefined' ? unslugLeague(this.props.params.leagueSlug) : 'SP1'}
-      seasonYear={typeof this.props.params.seasonYear !== 'undefined' ? Number.parseInt(this.props.params.seasonYear) : 1998}
+      leagueName={leagueName}
+      seasonYear={seasonYear}
     />);
   }
 }
