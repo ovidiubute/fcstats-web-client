@@ -4,17 +4,8 @@ import { leagueNamesToCountries } from './countryselector/static/leagues_to_coun
 import { slugLeague } from '../utils/library'
 
 class CountryCarousel extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  onSelect(leagueName) {
-    this.props.onSelect(leagueName);
-  }
-
   render () {
-    let imageElements = [];
-    for (let leagueName of Object.keys(leagueNamesToCountries)) {
+    const imageElements = Object.keys(leagueNamesToCountries).map((leagueName) => {
       let countryName = leagueNamesToCountries[leagueName];
       let countryFlagPosition = getCountryFlagByName(countryName);
       let imgStyle = {
@@ -27,21 +18,24 @@ class CountryCarousel extends React.Component {
         marginLeft: "-12px"
       };
 
-      imageElements.push(
+      return (
         <a key={"select-league-" + leagueName}
-          onClick={this.onSelect.bind(this, leagueName)}
+          onClick={this.props.onSelect.bind(this, leagueName)}
           href={"#/" + slugLeague(leagueName)}
           style={{margin: 'auto'}}
         >
-          <img style={imgStyle} alt={countryName} src="/static/transparent.gif"/>
+          <img style={imgStyle}
+            alt={countryName}
+            src="/static/transparent.gif"
+          />
         </a>
       );
-    }
+    });
 
     return (
-        <div style={{display: 'flex'}}>
-          {imageElements}
-        </div>
+      <div style={{display: 'flex', marginTop: '20px'}}>
+        {imageElements}
+      </div>
     );
   }
 }

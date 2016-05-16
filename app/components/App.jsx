@@ -1,5 +1,6 @@
 import React from 'react'
-import '!style!css!bootstrap/dist/css/bootstrap.min.css';
+import '!style!css!bootstrap/dist/css/bootstrap.min.css'
+import '!style!css!../main.css'
 
 import Nav from './Nav.jsx'
 import LeagueTable from './LeagueTable.jsx'
