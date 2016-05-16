@@ -3,6 +3,9 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 
+// Tracking
+require('autotrack');
+
 // App specific imports
 import App from './components/App.jsx'
 import { unslugLeague } from './utils/library'

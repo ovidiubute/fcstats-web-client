@@ -1,6 +1,6 @@
 {
   "name": "fcstats-client",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Football stats client",
   "main": "index.jsx",
   "scripts": {
@@ -11,7 +11,9 @@
   "author": "Ovidiu Bute <ovidiu.bute@gmail.com> (http://ovidiubute.com)",
   "license": "ISC",
   "dependencies": {
+    "autotrack": "^0.6.5",
     "bootstrap": "^3.3.6",
+    "fcstats-staticdata": "ovidiubute/fcstats-staticdata",
     "jquery": "^2.2.3",
     "lodash": "^4.9.0",
     "react": "^15.0.1",
@@ -19,8 +21,7 @@
     "react-dom": "^15.0.1",
     "react-loading": "0.0.9",
     "react-modal": "^1.1.2",
-    "react-router": "^2.2.4",
-    "fcstats-staticdata": "ovidiubute/fcstats-staticdata"
+    "react-router": "^2.2.4"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
