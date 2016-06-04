@@ -5,7 +5,7 @@ import { apiUrl } from '../../utils/api'
 class FixtureLoader {
   getByLeagueAndYear(leagueName, startYear) {
     let url = apiUrl;
-    url += `/api/matches/${leagueName}/${startYear}`;
+    url += `/matches/${leagueName}/${startYear}`;
     return makeRequest({
       method: 'GET',
       url: url

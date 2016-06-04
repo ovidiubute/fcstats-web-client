@@ -5,7 +5,7 @@ import { apiUrl } from '../../utils/api'
 class SeasonsLoader {
   getByLeague(leagueName) {
     let url = apiUrl;
-    url += `/api/seasons/${leagueName}`;
+    url += `/seasons/${leagueName}`;
     return makeRequest({
       method: 'GET',
       url: url
