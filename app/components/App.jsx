@@ -5,6 +5,7 @@ import '!style!css!../main.css'
 import Nav from './Nav.jsx'
 import LeagueTable from './LeagueTable.jsx'
 import LeagueSelectModal from './LeagueSelectModal.jsx'
+import Feedback from './Feedback.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -49,6 +50,7 @@ class App extends React.Component {
           modalIsOpen={this.state.modalIsOpen}
           onSelectCountry={this.onSelectCountry.bind(this)}
         />
+      <Feedback />
       </div>
     );
   }

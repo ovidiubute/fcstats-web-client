@@ -1,6 +1,6 @@
 {
   "name": "fcstats-client",
-  "version": "4.1.1",
+  "version": "4.2.1",
   "description": "Football stats client",
   "main": "index.jsx",
   "scripts": {
